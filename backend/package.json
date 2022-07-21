@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "description": "Desafio técnico componente do processo seletivo da XP para a Turma XP da Trybe.",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "mocha ./tests/**/*$NAME*.test.js --exit"
+    "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "start": "node .",
+    "drop": "npx sequelize-cli db:drop",
+    "seed": "npx sequelize-cli db:seed:all",
+    "test": "mocha ./tests/**/*$NAME*.test.js --exit",
+    "debug": "nodemon .",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
   "repository": {
     "type": "git",
