@@ -1,0 +1,19 @@
+{
+  "name": "desafio_xp",
+  "version": "1.0.0",
+  "description": "Desafio técnico componente do processo seletivo da XP para a Turma XP da Trybe.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calilisantos/desafio_xp.git"
+  },
+  "author": "Calili dos Santos Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calilisantos/desafio_xp/issues"
+  },
+  "homepage": "https://github.com/calilisantos/desafio_xp#readme"
+}
