@@ -1,27 +1,56 @@
 'use strict';
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Operations', {
-      id: {
+  up: async (queryInterface, Sequelize) => {
+    const OperationTable = await queryInterface.createTable('Operations', {
+      operation_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      operation_id: {
+      asset_id: {
+        allowNull: false,
+        references: {
+          model: 'Assets',
+          key: 'asset_id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
         type: Sequelize.INTEGER
       },
-      createdAt: {
+      client_id: {
         allowNull: false,
+        references: {
+          model: 'Clients',
+          key: 'client_id',
+        },
+        type: Sequelize.INTEGER
+      },
+      operation_type: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      operation_date: {
+        allowNull: false,
+        defaultValue: Sequelize.fn('now'),
         type: Sequelize.DATE
       },
-      updatedAt: {
+      operation_price: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DECIMAL
+      },
+      operation_qtd: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      operation_status: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
     });
+    return OperationTable;
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('Operations');
   }
 };
