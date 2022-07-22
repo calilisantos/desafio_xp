@@ -17,6 +17,14 @@ const Deposit = (sequelize, DataTypes) => {
     tableName: 'Deposits',
   });
 
+  Deposit.associate = ({Client}) => {
+    Deposit.belongsTo(Client,
+      { 
+        as: 'client',  
+        foreignKey: 'client_id' 
+      });
+  };
+
   return Deposit;
 };
 
