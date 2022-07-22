@@ -1,27 +1,30 @@
 'use strict';
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Withdraws', {
-      id: {
+  up: async (queryInterface, Sequelize) => {
+    const WithdrawTable = await queryInterface.createTable('Withdraws', {
+      withdraw_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      withdraw_id: {
+      client_id: {
+        allowNull: false,
+        references: {
+          model: 'Clients',
+          key: 'client_id',
+        },
         type: Sequelize.INTEGER
       },
-      createdAt: {
+      withdraw_date: {
         allowNull: false,
+        defaultValue: Sequelize.fn('now'),
         type: Sequelize.DATE
       },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
+    return WithdrawTable;
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('Withdraws');
   }
 };
