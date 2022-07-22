@@ -28,6 +28,7 @@ module.exports = {
       },
       operation_type: {
         allowNull: false,
+        defaultValue: 'open',
         type: Sequelize.STRING
       },
       operation_date: {
