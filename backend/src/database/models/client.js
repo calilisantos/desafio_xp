@@ -17,4 +17,28 @@ const Client = (sequelize, DataTypes) => {
   return Client;
 };
 
+Client.associate = ({Deposit}) => {
+  Client.hasMany(Deposit,
+    { 
+      as: 'deposits', 
+      foreignKey: 'client_id' 
+    });
+};
+
+Client.associate = ({Withdraw}) => {
+  Client.hasMany(Withdraw,
+    { 
+      as: 'withdraws', 
+      foreignKey: 'client_id' 
+    });
+};
+
+Client.associate = ({Operation}) => {
+  Client.hasMany(Operation,
+    { 
+      as: 'operations', 
+      foreignKey: 'client_id' 
+    });
+};
+
 module.exports = Client;
