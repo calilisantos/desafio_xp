@@ -9,7 +9,11 @@ const Custody = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     custody_qtd: DataTypes.INTEGER,
-  }, { timestamps: false });
+  }, 
+  { 
+    timestamps: false,
+    tableName: 'Custodies',
+  });
 
   return Custody;
 };
