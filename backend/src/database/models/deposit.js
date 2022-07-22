@@ -1,23 +1,23 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class Deposit extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
-  Deposit.init({
-    deposit_id: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Deposit',
+const Deposit = (sequelize, DataTypes) => {
+  const Deposit = sequelize.define('Deposit', {
+    deposit_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    client_id: DataTypes.INTEGER,
+    deposit_date: {
+      type: DataTypes.DATE, 
+      defaultValue: sequelize.fn('now')
+    },
+    deposit_value: DataTypes.DECIMAL,
+  },
+  {
+    timestamps: false,
+    tableName: 'Deposit',
   });
+
   return Deposit;
 };
+
+module.exports = Deposit;
