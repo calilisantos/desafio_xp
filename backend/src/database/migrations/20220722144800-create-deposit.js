@@ -21,6 +21,10 @@ module.exports = {
         defaultValue: Sequelize.fn('now'),
         type: Sequelize.DATE
       },
+      deposit_value: {
+        allowNull: false,
+        type: Sequelize.DECIMAL
+      },
     });
     return DepositTable;
   },
