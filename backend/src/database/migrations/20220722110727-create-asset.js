@@ -1,27 +1,37 @@
 'use strict';
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Assets', {
-      id: {
+  up: async (queryInterface, Sequelize) => {
+    const AssetsTable = await queryInterface.createTable('Assets', {
+      asset_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      asset_id: {
+      name: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      price: {
+        allowNull: false,
+        type: Sequelize.DECIMAL
+      },
+      shares: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
-      createdAt: {
+      ticket: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       },
-      updatedAt: {
+      icon: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       }
     });
+    return AssetsTable;
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('Assets');
   }
 };
