@@ -14,7 +14,7 @@ const Deposit = (sequelize, DataTypes) => {
   },
   {
     timestamps: false,
-    tableName: 'Deposit',
+    tableName: 'Deposits',
   });
 
   return Deposit;
