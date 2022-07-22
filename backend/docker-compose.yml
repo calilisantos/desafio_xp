@@ -30,6 +30,8 @@ services:
       MYSQL_HOST: db # Nome do service logo abaixo
       JWT_SECRET: secretJWT
       PORT: '3000'
+      DB_NAME: L3_Project
+      DB_DIALECT: mysql
     # Diretório padrão de execução
     working_dir: /app
     # Lista de volumes (diretórios) mapeados de fora para dentro do container
