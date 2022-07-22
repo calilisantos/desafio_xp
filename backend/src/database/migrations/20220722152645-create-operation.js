@@ -28,7 +28,6 @@ module.exports = {
       },
       operation_type: {
         allowNull: false,
-        defaultValue: 'open',
         type: Sequelize.STRING
       },
       operation_date: {
@@ -46,6 +45,7 @@ module.exports = {
       },
       operation_status: {
         allowNull: false,
+        defaultValue: 'open',
         type: Sequelize.STRING
       },
     });
