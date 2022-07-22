@@ -21,6 +21,22 @@ const Operation = (sequelize, DataTypes) => {
     tableName: 'Operations', 
   });
 
+  Operation.associate = ({Asset}) => {
+    Operation.belongsTo(Asset,
+      { 
+        as: 'asset',  
+        foreignKey: 'asset_id' 
+      });
+  };
+
+  Operation.associate = ({Client}) => {
+    Operation.belongsTo(Client,
+      { 
+        as: 'client',  
+        foreignKey: 'client_id' 
+      });
+  };
+
   return Operation;
 };
 
