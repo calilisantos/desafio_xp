@@ -1,27 +1,39 @@
 'use strict';
+
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Custodies', {
-      id: {
+  up: async (queryInterface, Sequelize) => {
+    const CustodiesTable = queryInterface.createTable('Custodies', {
+      asset_id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
+        references: {
+          model: 'Assets',
+          key: 'asset_id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+        type: Sequelize.INTEGER
+      },
+      client_id: {
+        allowNull: false,
+        primaryKey: true,
+        references: {
+          model: 'Clients',
+          key: 'client_id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
         type: Sequelize.INTEGER
       },
       custody_qtd: {
+        allowNull: false,
         type: Sequelize.INTEGER
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
       }
     });
+    return CustodiesTable;
   },
-  async down(queryInterface, Sequelize) {
+
+  down: async (queryInterface) => {
     await queryInterface.dropTable('Custodies');
   }
 };

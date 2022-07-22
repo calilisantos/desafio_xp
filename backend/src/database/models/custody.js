@@ -1,23 +1,17 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class Custody extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
-  Custody.init({
-    custody_qtd: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Custody',
-  });
+const Custody = (sequelize, DataTypes) => {
+  const Custody = sequelize.define('Custody', {
+    asset_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+    },
+    client_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+    },
+    custody_qtd: DataTypes.INTEGER,
+  }, { timestamps: false });
+
   return Custody;
 };
+
+module.exports = Custody;
