@@ -19,4 +19,12 @@ const Asset = (sequelize, DataTypes) => {
   return Asset;
 };
 
+Asset.associate = ({Operation}) => {
+  Asset.hasMany(Operation,
+    { 
+      as: 'operations', 
+      foreignKey: 'asset_id' 
+    });
+};
+
 module.exports = Asset;
