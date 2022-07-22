@@ -21,6 +21,10 @@ module.exports = {
         defaultValue: Sequelize.fn('now'),
         type: Sequelize.DATE
       },
+      withdraw_value: {
+        allowNull: false,
+        type: Sequelize.DECIMAL
+      },
     });
     return WithdrawTable;
   },
