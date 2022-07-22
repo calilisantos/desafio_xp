@@ -17,6 +17,14 @@ const Withdraw = (sequelize, DataTypes) => {
     tableName: 'Withdraw',
   });
 
+  Withdraw.associate = ({Client}) => {
+    Withdraw.belongsTo(Client,
+      { 
+        as: 'client',  
+        foreignKey: 'client_id' 
+      });
+  };
+
   return Withdraw;
 };
 
