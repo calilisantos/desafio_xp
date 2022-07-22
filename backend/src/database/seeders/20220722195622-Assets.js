@@ -1,24 +1,150 @@
-'use strict';
-
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+  up: async (queryInterface) => {
+    await queryInterface.bulkInsert('Assets',
+      [{
+        name: 'Python',
+        price: 19.90,
+        shares: 20,
+        ticket: 'PYT3',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg',
+      },
+      {
+        name: 'C#',
+        price: 20.01,
+        shares: 70,
+        ticket: 'CSRP11',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
+      },
+      {
+        name: 'Java',
+        price: 19.95,
+        shares: 70,
+        ticket: 'JAVA18',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg',
+      },
+      {
+        name: 'VisualBasic',
+        price: 19.91,
+        shares: 50,
+        ticket: 'VBSC6',
+        icon: 'https://www.pngwing.com/en/free-png-xivqk',
+      },
+      {
+        name: 'Javascript',
+        price: 19.95,
+        shares: 100,
+        ticket: 'JS7',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+      },
+      {
+        name: 'Assembly',
+        price: 19.51,
+        shares: 100,
+        ticket: 'ASSBLY1',
+        icon: 'https://iconscout.com/icon/asm-4805682',
+      },
+      {
+        name: 'SQL',
+        price: 19.78,
+        shares: 100,
+        ticket: 'SQL9',
+        icon: 'https://br.pinterest.com/pin/651122058633620410/',
+      },
+      {
+        name: 'Swift',
+        price: 20.14,
+        shares: 100,
+        ticket: 'SWFT5',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg',
+      },
+      {
+        name: 'PHP',
+        price: 19.95,
+        shares: 100,
+        ticket: 'PHP8',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+      },
+      {
+        name: 'Go',
+        price: 20.09,
+        shares: 100,
+        ticket: 'GO1',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg',
+      },
+      {
+        name: 'Delphi',
+        price: 19.95,
+        shares: 100,
+        ticket: 'DLPI11',
+        icon: 'https://worldvectorlogo.com/logo/delphi-2',
+      },
+      {
+        name: 'Ruby',
+        price: 19.95,
+        shares: 100,
+        ticket: 'RUBY3',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg',
+      },
+      {
+        name: 'Perl',
+        price: 19.87,
+        shares: 100,
+        ticket: 'PERL5',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/perl/perl-original.svg',
+      },
+      {
+        name: 'Fortran',
+        price: 19.54,
+        shares: 100,
+        ticket: 'FTN18',
+        icon: 'https://commons.wikimedia.org/wiki/File:Fortran_logo.svg',
+      },
+      {
+        name: 'R',
+        price: 19.93,
+        shares: 80,
+        ticket: 'R4',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
+      },
+      {
+        name: 'MATLAB',
+        price: 19.84,
+        shares: 100,
+        ticket: 'MLAB22',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg',
+      },
+      {
+        name: 'Scratch',
+        price: 20.02,
+        shares: 100,
+        ticket: 'SCTH3',
+        icon: 'https://www.flaticon.com/free-icon/scratch_919846',
+      },
+      {
+        name: 'FoxPro',
+        price: 19.84,
+        shares: 100,
+        ticket: 'FOXP9',
+        icon: 'https://commons.wikimedia.org/wiki/File:Foxpro-icon.png',
+      },
+      {
+        name: 'SAS',
+        price: 19.76,
+        shares: 100,
+        ticket: 'SAS25',
+        icon: 'https://icon-icons.com/pt/icone/sas-logo/170762',
+      },
+      {
+        name: 'Lua',
+        price: 19.93,
+        shares: 60,
+        ticket: 'LUA5',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original.svg',
+      },
+      ], { timestamps: false });
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+  down: async (queryInterface) => {
+    await queryInterface.bulkDelete('Assets', null, {})
   }
 };
