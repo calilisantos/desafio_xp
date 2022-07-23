@@ -9,7 +9,7 @@
     "start": "node .",
     "drop": "npx sequelize-cli db:drop",
     "seed": "npx sequelize-cli db:seed:all",
-    "test": "mocha ./tests/**/*$NAME*.test.js --exit",
+    "test": "mocha .src/tests/**/*$NAME*.test.js --exit",
     "debug": "nodemon .",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
