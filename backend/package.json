@@ -1,0 +1,45 @@
+{
+  "name": "desafio_xp",
+  "version": "1.0.0",
+  "description": "Desafio técnico componente do processo seletivo da XP para a Turma XP da Trybe.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "start": "node .",
+    "drop": "npx sequelize-cli db:drop",
+    "seed": "npx sequelize-cli db:seed:all",
+    "test": "mocha ./tests/**/*$NAME*.test.js --exit",
+    "debug": "nodemon .",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calilisantos/desafio_xp.git"
+  },
+  "author": "Calili dos Santos Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calilisantos/desafio_xp/issues"
+  },
+  "homepage": "https://github.com/calilisantos/desafio_xp#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-joi-validation": "^5.0.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.19",
+    "sequelize-cli": "^6.4.1",
+    "sinon": "^14.0.0"
+  }
+}
