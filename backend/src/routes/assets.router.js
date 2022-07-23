@@ -1,7 +1,9 @@
 const { Router } = require('express');
-const { getByAsset } = require('../controllers/assets.controller');
+const { getByAsset, getAllAssets } = require('../controllers/assets.controller');
 
 const router = Router();
+
+router.get('/', getAllAssets);
 
 router.get('/:id', getByAsset);
 
