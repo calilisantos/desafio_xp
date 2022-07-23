@@ -9,27 +9,22 @@ const Custody = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     custody_qtd: DataTypes.INTEGER,
-  }, 
-  { 
-    timestamps: false,
-    tableName: 'Custodies',
-  });
+  }, { timestamps: false });
 
   Custody.associate = ({Asset, Client}) => {
-    Asset.belongsToMany(Client,
-      { 
-        as: 'client',
-        through: Custody,
-        foreignKey: 'client_id',
-        otherKey: 'asset_id', 
-      });
-    Client.belongsToMany(Asset,
-      { 
-        as: 'asset',
-        through: Custody,
-        foreignKey: 'asset_id',
-        otherKey: 'client_id', 
-      });
+    Client.belongsToMany(Asset, { 
+      as: 'assets',
+      through: Custody,
+      foreignKey: 'client_id',
+      otherKey: 'asset_id', 
+    });
+    
+    Asset.belongsToMany(Client, { 
+      as: 'clients',
+      through: Custody,
+      foreignKey: 'asset_id',
+      otherKey: 'client_id', 
+    });
   };
 
   return Custody;
