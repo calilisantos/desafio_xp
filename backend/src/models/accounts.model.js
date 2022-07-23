@@ -11,9 +11,7 @@ const getBalanceById = async (client_id) => {
 const newDeposit = async ({client_id, deposit_value}) => {
   const client = await getBalanceById(client_id);
   if(!client) return false
-  const deposit = await Deposit.create({ client_id, deposit_value, 
-    attributes: ['client_id', 'deposit_value'],
-  });
+  const deposit = await Deposit.create({ client_id, deposit_value});
   await Client.update(
     {balance: Number(client.balance) + Number(deposit_value)},
     { where: {client_id}},
