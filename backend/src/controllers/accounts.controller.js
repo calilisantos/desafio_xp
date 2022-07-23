@@ -7,4 +7,10 @@ const getBalanceById = async (req, res) => {
   return res.status(200).json(clientBalance);
 };
 
-module.exports = { getBalanceById };
+const newDeposit = async (req, res) => {
+  const depositInfo = await accountsServices.newDeposit(req.body);
+  if (depositInfo.status) return res.status(depositInfo.status).json(depositInfo.message);
+  return res.status(200).json(depositInfo);
+};
+
+module.exports = { getBalanceById, newDeposit };
