@@ -12,4 +12,11 @@ const getByAsset = async (req, res) => {
   return res.status(200).json(asset);
 };
 
-module.exports = { getAllAssets, getByAsset };
+const getByClient = async (req, res) => {
+  const { id } = req.params;
+  const assets = await assetsServices.getByClient(id);
+  if (assets.status) return res.status(assets.status).json(assets.message);
+  return res.status(200).json(assets);
+};
+
+module.exports = { getAllAssets, getByAsset, getByClient };
