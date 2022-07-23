@@ -11,4 +11,10 @@ const getByAsset = async (id) => {
   return asset;
 };
 
-module.exports = { getAllAssets, getByAsset };
+const getByClient = async (id) => {
+  const custodies = await assetsModels.getByClient(id);
+  if (!custodies.length) return { status: 404, message: 'Client not found' };
+  return custodies;
+};
+
+module.exports = { getAllAssets, getByAsset, getByClient };
