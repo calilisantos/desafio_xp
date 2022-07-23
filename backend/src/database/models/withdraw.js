@@ -14,7 +14,7 @@ const Withdraw = (sequelize, DataTypes) => {
   },
   {
     timestamps: false,
-    tableName: 'Withdraw',
+    tableName: 'Withdraws',
   });
 
   Withdraw.associate = ({Client}) => {
