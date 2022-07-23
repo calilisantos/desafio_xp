@@ -1,4 +1,4 @@
-const { Asset } = require('../database/models')
+const { Asset, Custody } = require('../database/models')
 
 const getAllAssets = async () => {
   const assets = await Asset.findAll({
@@ -15,4 +15,11 @@ const getByAsset = async (asset_id) => {
   return asset;
 }
 
-module.exports = { getAllAssets, getByAsset };
+const getByClient = async (client_id) => {
+  const custodies = await Custody.findAll({
+    where: {client_id},
+  });
+  return custodies
+}
+
+module.exports = { getAllAssets, getByAsset, getByClient };
