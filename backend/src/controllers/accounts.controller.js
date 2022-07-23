@@ -16,7 +16,7 @@ const newDeposit = async (req, res) => {
 const newWithdraw = async (req, res) => {
   const withDrawInfo = await accountsServices.newWithdraw(req.body);
   if (withDrawInfo.status) return res.status(withDrawInfo.status).json(withDrawInfo.message);
-  return res.status(200).json(withDrawInfo);
+  return res.status(201).json(withDrawInfo);
 };
 
 module.exports = { getBalanceById, newDeposit, newWithdraw };
