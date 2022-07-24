@@ -10,7 +10,7 @@ const Withdraw = (sequelize, DataTypes) => {
       type: DataTypes.DATE, 
       defaultValue: sequelize.fn('now')
     },
-    withdraw_value: DataTypes.DECIMAL,
+    withdraw_value: DataTypes.STRING,
   },
   {
     timestamps: false,
