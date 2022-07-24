@@ -1,9 +1,7 @@
 const { Asset, Custody } = require('../database/models')
 
 const getAllAssets = async () => {
-  const assets = await Asset.findAll({
-    attributes: ['ticket', 'shares', 'price'],
-  });
+  const assets = await Asset.findAll({});
   return assets;
 }
 
