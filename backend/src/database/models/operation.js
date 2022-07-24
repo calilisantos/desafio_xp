@@ -12,7 +12,7 @@ const Operation = (sequelize, DataTypes) => {
       type: DataTypes.DATE, 
       defaultValue: sequelize.fn('now')
     },
-    operation_price: DataTypes.DECIMAL,
+    operation_price: DataTypes.STRING,
     operation_qtd: DataTypes.INTEGER,
     operation_status: DataTypes.STRING,
   }, 
