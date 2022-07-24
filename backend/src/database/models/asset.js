@@ -6,7 +6,7 @@ const Asset = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     name: DataTypes.STRING,
-    price: DataTypes.DECIMAL,
+    price: DataTypes.STRING,
     shares: DataTypes.INTEGER,
     ticket: DataTypes.STRING,
     icon: DataTypes.STRING,	
