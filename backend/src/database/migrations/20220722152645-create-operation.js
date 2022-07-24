@@ -27,7 +27,6 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       operation_type: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       operation_date: {
