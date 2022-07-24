@@ -37,7 +37,7 @@ module.exports = {
       },
       operation_price: {
         allowNull: false,
-        type: Sequelize.DECIMAL
+        type: Sequelize.STRING
       },
       operation_qtd: {
         allowNull: false,
