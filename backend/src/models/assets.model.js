@@ -17,9 +17,15 @@ const getByAsset = async (asset_id) => {
 
 const getByClient = async (client_id) => {
   const custodies = await Custody.findAll({
-    where: {client_id},
+    where: {client_id}
   });
-  return custodies
+  const assets = await custodies.map(async({asset_id, custody_qtd}) => {
+    const { ticket, price} = await getByAsset(asset_id)
+    return { ticket, custody_qtd, price: Number(price)}
+  }
+  );
+  console.log('assets=>', await Promise.all(assets));
+  return await Promise.all(assets);
 }
 
 module.exports = { getAllAssets, getByAsset, getByClient };
