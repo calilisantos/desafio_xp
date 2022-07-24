@@ -23,7 +23,7 @@ module.exports = {
       },
       withdraw_value: {
         allowNull: false,
-        type: Sequelize.DECIMAL
+        type: Sequelize.STRING
       },
     });
     return WithdrawTable;
