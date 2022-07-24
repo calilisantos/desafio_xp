@@ -23,7 +23,7 @@ module.exports = {
       },
       deposit_value: {
         allowNull: false,
-        type: Sequelize.DECIMAL
+        type: Sequelize.STRING
       },
     });
     return DepositTable;
