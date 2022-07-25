@@ -1,7 +1,5 @@
 # Boas vindas ao projeto L3!
 
-Para executar o projeto, observe as orientações descritas a seguir, e se tiver qualquer dúvida, sugestão, contribuição, considere abrir uma issue ou entrar em contato pelo email: calilisantos@gmail.com. 🚀
-
 Ao abrir o diretório de backend deste repositório, você vai encontrar os detalhes de como está estruturado e foi desenvolvido o projeto.
 
 
