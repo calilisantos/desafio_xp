@@ -10,7 +10,7 @@ const Deposit = (sequelize, DataTypes) => {
       type: DataTypes.DATE, 
       defaultValue: sequelize.fn('now')
     },
-    deposit_value: DataTypes.DECIMAL,
+    deposit_value: DataTypes.STRING,
   },
   {
     timestamps: false,

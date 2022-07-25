@@ -18,7 +18,7 @@ module.exports = {
       },
       balance: {
         allowNull: false,
-        type: Sequelize.DECIMAL
+        type: Sequelize.STRING
       }
     });
     return ClientsTable;

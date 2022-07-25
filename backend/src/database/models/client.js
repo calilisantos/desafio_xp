@@ -7,7 +7,7 @@ const Client = (sequelize, DataTypes) => {
     },
     username: DataTypes.STRING,
     password: DataTypes.STRING,
-    balance: DataTypes.DECIMAL,
+    balance: DataTypes.STRING,
   },
   {
     timestamps: false,

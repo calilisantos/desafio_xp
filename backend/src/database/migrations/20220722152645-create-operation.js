@@ -27,7 +27,6 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       operation_type: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       operation_date: {
@@ -37,7 +36,7 @@ module.exports = {
       },
       operation_price: {
         allowNull: false,
-        type: Sequelize.DECIMAL
+        type: Sequelize.STRING
       },
       operation_qtd: {
         allowNull: false,
