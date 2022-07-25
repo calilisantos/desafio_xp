@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "private": true,
   "scripts": {
-    "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "database": "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
     "start": "node .",
     "drop": "npx sequelize-cli db:drop",
     "seed": "npx sequelize-cli db:seed:all",
